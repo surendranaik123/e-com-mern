@@ -1,0 +1,109 @@
+.home{
+ display:flex;
+ justify-content: center;
+}
+img{
+    height: 150px;
+    width: 150px;
+}
+.product{  
+    justify-content: center;
+    height: 370px;
+    width:auto;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.item{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.add:hover{
+
+    height: 30px;
+    border: 2px solid blue;
+    border-radius: 7px;
+    color: white;
+    background-color:gray;
+}
+.add{
+    margin-top: 10px;
+    margin-left:5px;
+    height: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+}
+.buy:hover{
+    height: 30px;
+    border: 2px solid blue;
+    border-radius: 7px;
+    color:white;
+    background-color:blueviolet;
+}
+.buy{
+    height: 30px;
+    width: auto;
+     margin-left:10px;
+     margin-top: 10px;
+    border-radius: 5px;
+    
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  
+  .pagination a {
+    color: #007bff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+  
+  .pagination a:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .pagination .break-me {
+    margin: 0 4px;
+  }
+  
+  .pagination ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-left:5px;
+    margin-top: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+ 
+.btn1{
+    display: flex;
+    justify-content: center;
+   
+}
