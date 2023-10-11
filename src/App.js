@@ -1,88 +1,78 @@
-// import React from "react";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { Nav } from "./Product/Nav";
-// import Admin from "./Admin/AdminReg";
-// import AdminLogAuth from "./Admin/AdminLog";
-// import UserReg from "./User/UserReg";
-// import UserLogingAuth from "./User/UserLog";
-// import Edit from "./User/Edit";
-// import { FetchData } from "./User/FetchData";
-// import Products from "./Product/Products";
-// import  Product  from "./Product/Product";
-// import { Provider } from 'react-redux';
-// import store from './redux/store';
-// import Cart from "./Product/Cart";
-// const App = () => {
-//   return (
-//     <>
-//     <Provider store={store}>
-//       <BrowserRouter>
-//        <Nav/>
-//         <Routes>
-
-//           <Route path="/userreg" element={<UserReg/>} />
-//           <Route path="/edit/:id" element={<Edit/>} />
-//           <Route path="/fetch" element={<FetchData/>} />
-//           <Route path="/userlog" element={<UserLogingAuth/>} />
-//           {/* <Route path="/" element={<Nav/>}/> */}
-//           <Route path="/adminreg" element={<Admin/>} />
-//           <Route path="/adminlog" element={<AdminLogAuth/>} />
-//           <Route path="/" element={<Products/>} />
-//           <Route path='/Product/:id' element={<Product/>} /> 
-//           <Route path="/cart" element={<Cart/>}/>
-//         </Routes>
-//       </BrowserRouter>
-//     </Provider>
-//     </>
-//   );
-// };
-
-// export default App
+import React, { useReducer, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { initialState, reducer } from "./components/UseReducer";
+import { Provider } from "react-redux";
+import store from './redux/store/store.js';
+import UserReg from "./common/User/UserReg";
+import Edit from "./common/User/Edit";
+import { FetchData } from "./common/User/FetchData";
+import Admin from "./common/Admin/AdminReg";
+import AdminLogAuth from "./common/Admin/AdminLog";
+import Products from "./Product/Products";
+import Product from "./Product/Product";
+import Cart from "./Product/Cart";
+import Login from "./common/Login";
+import Order from "./orderpage/Order";
+import { OrderDetails } from "./orderpage/OrderDetails";
+import Detail from "./orderpage/Detail";
+import { OrderDe } from "./orderpage/OrderDe";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import Landing from "./pages/Landing";
+import Header from "./components/Navbar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 
-
-import React, { useReducer } from 'react';
-import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom'; // Import 'Switch'
-import { Cart } from './components/Cart';
-import { Navbar } from './components/Navbar';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import { Order } from './components/Order';
-import Login from './components/Login';
-import Logout from './components/Logout';
-import { initialState, reducer } from './components/UseReducer';
 
 export const UserContext = React.createContext();
 
-const Routing = () => {
-  return (
-    <Routes>
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/order" element={<Order />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/logout" element={<Logout />} />
-    </Routes>
-  );
-};
-
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState); 
 
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState('');
   return (
-    <div>
-      <Provider store={store}>
-        <UserContext.Provider value={{ state, dispatch }}>
-          <BrowserRouter>
-            <Navbar />
-            <Routing/>
-          </BrowserRouter>
-        </UserContext.Provider>
-      </Provider>
-    </div>
+    <>
+    <Provider store={store}>
+    <UserContext.Provider value={{ state, dispatch }}>
+      <BrowserRouter>
+      
+        <Routes>
+          
+        <Route path="/landing" element={<Landing/>} /> 
+          <Route path="/userreg" element={<UserReg/>} />
+          <Route path="/edit/:id" element={<Edit/>} />
+          <Route path="/userdetails" element={<FetchData/>} />
+          {/* <Route path="/userlog" element={<UserLogingAuth/>} /> */}
+          <Route path="/adminreg" element={<Admin/>} />
+          <Route path="/adminlog" element={<AdminLogAuth/>} />
+          <Route path="/products" element={<Products/>} />
+          <Route path='/Product/:id' element={<Product/>} /> 
+          <Route path="/cart" element={<Cart/>}/>
+          {/* <Route path="/data" element={<DataDisplayPage user={user}/>}/> */}
+        
+          <Route path="/login" element={<Login/>} />
+          <Route path="/order/:id" element={<Order/>} />
+          <Route path="/orderdetails" element={<OrderDetails/>} />
+          <Route path="/details" element={<Detail/>} />
+          {/* <Route path="/payment" element={<Payment/>}/> */}
+         
+          <Route path="/" element={<Home/>} />  
+          <Route path="/order" element={<OrderDe/>} />  
+          <Route path="/footer" element={<Footer/>} /> 
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+       
+          
+        </Routes>
+      
+      </BrowserRouter>
+      </UserContext.Provider>
+    </Provider>
+    </>
   );
 };
 
-export default App;
-
-
+export default App
 

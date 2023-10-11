@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { NavLink, useParams } from 'react-router-dom';
-import { addCart } from '../redux';
+import { addCart } from '../redux/Action/action';
 import { useDispatch,useSelector } from 'react-redux';
+import  Navbar  from '../components/Navbar';
+import Footer from '../components/Footer';
+
+
 
 
 const Product = () => {
-    const stat=useSelector(state=>console.log(state))
+    const state=useSelector(state=>console.log(state))
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -30,8 +34,9 @@ const Product = () => {
 
     const Loading = () => {
         return(
-            <>
-                <div className="col-md-6">
+            <> 
+               
+               <div className="col-md-6">
                     <Skeleton height={400}/>
                 </div>
                 <div className="col-md-6" style={{lineHeight:2}}>
@@ -88,11 +93,13 @@ const Product = () => {
 
     return (
         <div>
+            <Navbar/> 
             <div className="container py-5">
                 <div className="row py-4">
                     {loading ? <Loading /> : <ShowProduct />}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

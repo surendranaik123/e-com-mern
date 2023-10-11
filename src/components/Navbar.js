@@ -1,110 +1,198 @@
-import React, { useContext } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import React, { useContext, useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import "../css/product.css";
-import { UserContext } from "../App"
+import { UserContext } from "../App";
+import { Dropdown, Input } from "antd";
+import {
+  ShoppingCartOutlined,
+  UsergroupAddOutlined,
+  UserOutlined,
+  FireOutlined,
+} from "@ant-design/icons";
+import { logout } from "../redux/Reducer/authSlice";
+import img from "../assets/nav_logo.jpg";
+import img1 from "../assets/profilepic.svg";
 
-export const Navbar = () => {
-  const { state, dispatch } = useContext(UserContext)
-  const state1 = useSelector((state) => state.cartReducer)
+import NavDropdown from "react-bootstrap/NavDropdown";
+
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+
+function Navbar() {
+  const { Search } = Input;
+  const location = useLocation();
+  const { state, dispatch } = useContext(UserContext);
+  const state1 = useSelector((state) => state.cart);
   const navigate = useNavigate();
+  const user = useSelector((state) => state.auth.user);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const dispatchRedux = useDispatch();
 
-  const handleSelectChange = (event) => {
-    const selectedOption = event.target.value;
-    navigate("/")
-    if (selectedOption === "adminreg") {
-      navigate("/adminreg");
-    } else if (selectedOption === "login") {
-      navigate("/login");
-    }
+  //order
+  const orders = useSelector((state) => state.orders);
+
+  const handleLogout = () => {
+    // Perform any necessary cleanup or API calls here.
+    dispatchRedux(logout());
+    navigate("/");
   };
 
-  const RenderMenu = () => {
-    if (state) {
-      return (<>
-
-<li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/"> Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/"> Products</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about"> About</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact"> Contact </NavLink></li>
-
-              <li>
-                <NavLink to="/cart" className="btn">
-                  <i className="bi bi-cart"></i> Cart (0)
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink to="/order" className="btn">
-                  <i className="bi bi-order "></i> Order(0)
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/logout" className="btn">
-                  Logout
-                </NavLink>
-              </li>
-
-      </>)
-
-    } else {
-           return(<>
-           
-<li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/"> Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/"> Products</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about"> About</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact"> Contact </NavLink></li>
-
-              <li>
-                <NavLink to="/cart" className="btn">
-                  <i className="bi bi-cart"></i> Cart (0)
-                </NavLink>
-              </li>
-
-             
-              <li>
-                <NavLink to="/login" className="btn">User Login
-                  {/* <i className="bi bi-person"></i>
-                  <select onClick={handleSelectChange}>
-                    <option value="login">User Login</option>
-                    <option value="adminreg">Admin Login</option>
-
-                  </select> */}
-                </NavLink>
-              </li>
-           
-           </>)
-    }
-  }
+  const handlecart = () => {
+    // Perform any necessary cleanup or API calls here.
+ 
+    navigate("/cart");
+  };
+  const handleorder = () => {
+    // Perform any necessary cleanup or API calls here.
+    navigate(`/order?username=${user ? user.name : ""}`);
+  };
 
 
+  const [showProfileMenu, setShowProfileMenu] = useState(true);
+
+  const handleProfileClick = () => {
+    setShowProfileMenu(true);
+  };
+
+  const handleSettingClick = () => {
+    setShowProfileMenu(false);
+  };
+  console.log(showProfileMenu);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/"> NEW COLLECTION</NavLink>
+          <center>
+            <div style={{ display: "flex" }}>
+              {/* Add your logo here */}
+              <img
+                src={img}
+                alt="image"
+                style={{ height: "80px", width: "80px", marginLeft: "-70px" }}
+              />
+              <NavLink
+                className="navbar-brand fw-bold fs-4"
+                to="/"
+                style={{ marginTop: "15px", marginLeft: "10px" }}
+              >
+                E-com
+              </NavLink>
+            </div>
+          </center>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <RenderMenu/>
+              <li
+                className="nav-item"
+                style={{
+                  marginLeft: user ? "0px" : "0px",
+                  marginTop: "10px",
+                }}
+              >
+                <NavLink className="nav-link active" aria-current="page" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item" style={{ marginTop: "10px" }}>
+                <NavLink className="nav-link" to="/products">
+                  Products
+                </NavLink>
+              </li>
+              <li className="nav-item" style={{ marginTop: "10px" }}>
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li
+                className="nav-item"
+                style={{ marginTop: "10px", marginRight: "30px" }}
+              >
+                <NavLink className="nav-link" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+
+              {/* <Search style={{ marginLeft: "10px" }} className="search" placeholder="input search text" onSearch={onSearch} enterButton /> */}
+              <li>
+                <NavLink to="/cart" className="cartnav" style={{}}>
+                  <ShoppingCartOutlined /> Cart ({state1.length})
+                </NavLink>
+              </li>
+
+              {isAuthenticated ? (
+                <>
+                  <li>
+                    <NavLink
+                      to={`/order?username=${user ? user.name : ""}`}
+                      className="order"
+                    >
+                      <FireOutlined /> Order
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <NavLink to="/login" className="loginnav">
+                    <UsergroupAddOutlined /> UserLogin
+                  </NavLink>
+                </li>
+              )}
+
+              
+                 <center style={{marginLeft:"20px",marginTop:"8px",marginRight:"-520px",display:"flex"}}>
+              
+                 <img src={img1} alt='image' style={{height:"50px",width:"50px"}} onClick={handleProfileClick}/>
+                
+               
+                <NavDropdown 
+                  title={user ? user.name : "Guest"}
+                  id="basic-nav-dropdown" style={{marginTop:"10px",}}
+                  
+                >
+                   {(!user && <DropdownItem href="/login">
+                      login with user credentials
+                    </DropdownItem>)} 
+                    {user && (
+                  <>
+                    <DropdownItem
+                      onClick={handlecart}
+                      className="  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
+                    >
+                     MY Cart ({state1.length})
+                    </DropdownItem>
+
+                    <DropdownItem
+                    onClick={handleorder}
+                     
+                      className="  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
+                    >
+                     My Orders
+                    </DropdownItem>
+                  
+                    <DropdownItem
+                      onClick={handleSettingClick}
+                      className="  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
+                    >
+                      Setting
+                    </DropdownItem>
+                    <DropdownItem
+                      onClick={handleLogout}
+                      className="  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
+                    >
+                      Logout
+                    </DropdownItem>
+                    
+                  </>
+                   )} 
+                </NavDropdown>
+                
+                </center>
+             
             </ul>
           </div>
         </div>
       </nav>
     </div>
   );
-};
+}
+
+export default Navbar;

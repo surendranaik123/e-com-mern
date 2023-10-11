@@ -1,19 +1,49 @@
 .home{
  display:flex;
  justify-content: center;
+ margin-left: 150px;
+ 
 }
 img{
     height: 150px;
     width: 150px;
+    border-radius: 50px;
+  
 }
+
 .product{  
     justify-content: center;
     height: 370px;
     width:auto;
     padding: 20px;
+    padding-left: 30px;
     margin: 10px;
+    margin-top: -50px;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+.btn1{
+display:flexbox;
+margin-top: 10px;
+margin-left:5px;
+height: 30px;
+text-decoration: none;
+border-radius: 5px;
+color: black;
+ 
+}
+.btn{
+  height: 35px;
+  width:auto;
+    display: flex;
+    justify-content: center;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.display{
+  margin-top:40px;
+
 }
 .item{
     display: flex;
@@ -31,7 +61,7 @@ img{
 }
 .add{
     margin-top: 10px;
-    margin-left:5px;
+    margin-left:-15px;
     height: 30px;
     text-decoration: none;
     border-radius: 5px;
@@ -60,6 +90,7 @@ img{
     padding: 0;
     margin: 20px 0;
     border-radius: 4px;
+    margin-left: 150px;
   }
   
   .pagination a {
@@ -94,16 +125,99 @@ img{
     display: inline-block;
     margin-right: 10px;
   }
-.btn{
+
+ 
+
+.display{
+  display:flow-root;
+  justify-content: space-between;
+}
+.search{
+ margin-top: 16px;
+ margin-left: -10px;
+}
+
+.back {
+ 
+  width: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden; 
+  /* background-color: rgb(195, 206, 202); */
+}
+
+.back::before {
+  content: "";
+
+  background-image: url("C:\Users\Gokul\Desktop\MERN\CRUD\client\src\assets\productbackground.jpg"); 
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3; /* Adjust the opacity to control the darkness/lightness of the overlay */
+  z-index: -1; /* Place the overlay behind the content */
+}       
+
+.cartnav{
+  height: 35px;
+  width:auto;
     display: flex;
     justify-content: center;
     margin-left:5px;
-    margin-top: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    margin-top: 15px;
+    border: 2px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 5px;
 }
- 
-.btn1{
+.loginnav{
+  height: 35px;
+  width:auto;
     display: flex;
     justify-content: center;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 2px solid green;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.userdisplay{
+  margin-right: -450px;
+  height: 35px;
+  width:auto;
+    display: flex;
+    justify-content: center;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 2px solid green;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 5px;
+}
+.order{
+  height: 35px;
+  width:auto;
+    display: flex;
+    justify-content: center;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 2px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.dropmenu{
+width:auto;
+text-decoration: none;
+margin-left: -10px;
    
 }

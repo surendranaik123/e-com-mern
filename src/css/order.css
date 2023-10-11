@@ -1,0 +1,66 @@
+/* CSS for Order Component */
+
+.order-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: aqua;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .h31 {
+    padding: 20px;
+ text-align: center;
+    color: blue;
+  }
+  .img1{
+    height: 150px;
+    width: 100;
+    background-color: blueviolet;
+    border-radius: 200px;
+  }
+  .title1{
+    margin-left: 170px;
+    margin-top: -140px;
+    color: brown;
+  }
+  .price1{
+    margin-left: 170px;
+    color: blueviolet
+  }
+  .rating1{
+    margin-left: 170px;
+    color: green;
+  }
+ .qty{
+
+    margin-top: 50px;
+ }
+
+ .date{
+ margin-top: 10px;
+ margin-bottom: 10px;
+
+ }
+
+ .orderdetails{
+  
+  display: flex;
+  justify-content: center;
+   margin-left: 350px;
+   margin-top: -300px;
+
+ }
+ .details{
+  padding: 20px;
+  height: auto;
+  width:auto;
+  margin-left: 20px;
+  border-radius: 10px;
+
+ }
+
+ .orderde1{
+  background-color: aquamarine;
+ }

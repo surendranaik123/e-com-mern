@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-
+import { useSelector } from "react-redux";
+import "../css/product.css";
+// import { UserContext } from "../App"
 
 export const Nav = () => {
-
+  // const { state, dispatch } = useContext(UserContext)
+  const state1 = useSelector((state) => state.cartReducer)
+  const navigate = useNavigate();
 
   const handleSelectChange = (event) => {
     const selectedOption = event.target.value;
     navigate("/")
     if (selectedOption === "adminreg") {
       navigate("/adminreg");
-    } else if (selectedOption === "userreg") {
-      navigate("/userreg");
+    } else if (selectedOption === "userlog") {
+      navigate("/userlog");
     }
   };
 
+  
 
   return (
     <div>
@@ -43,7 +48,7 @@ export const Nav = () => {
                              <i className="bi bi-cart "></i> Cart (0)
                              </NavLink>
 
-                             <NavLink to="/order" className="btn">
+                             <NavLink to="/order/:id" className="btn">
                              <i className="bi bi-order "></i> Order()
                              </NavLink>
                             
@@ -54,7 +59,6 @@ export const Nav = () => {
                              <select onClick={handleSelectChange}>
                              <option value="userreg">User Login</option>
                              <option value="adminreg">Admin Login</option>
-                      
                              </select>
                             </NavLink>
                         

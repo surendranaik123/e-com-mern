@@ -1,0 +1,56 @@
+.dis {
+    display: flex;
+}
+
+.hero {
+    margin: 30px;
+    margin-right: 200px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid lightgrey;
+    height: 400px;
+    width: 480px;
+    padding: 10px;
+    padding-left: 65px;
+    padding-top: 50px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 100px black;
+}
+
+.home_img {
+
+    padding: 45px;
+    height: 550px;
+    width: 600px;
+}
+
+
+.men {
+    margin: 50px;
+    padding: 70px;
+    padding-top: 80px;
+    height: 200px;
+    width: 240px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-image: url("C:\Users\Gokul\Desktop\MERN\CRUD\client\src\assets\mensclothes.jpg");
+    background-size: 125%;
+    background-repeat: no-repeat;
+   
+   
+
+}
+
+.home_btn{
+    margin-left: -10px;
+    padding: 6px;
+   height: 38px;
+   width:115px;
+    border-radius: 5px;
+    background-color:bisque;
+}
+.home_btn:hover{
+    background-color: blue;
+    color: white;
+    border: 2px solid white;
+}
