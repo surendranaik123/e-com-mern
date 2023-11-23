@@ -14,7 +14,7 @@ export default function ProductStore({ onSubmit }) {
   const [rating, setRating] = useState([0, 0, 0, 0, 0]);
 
   const [discount, setDiscount] = useState(0);
-  const [discountprice, setDiscountprice] = useState(0);
+  // const [discountprice, setDiscountprice] = useState(0);
 
   const calculateDiscountedPrice = () => {
     const discountedPrice = price - (price * discount) / 100;

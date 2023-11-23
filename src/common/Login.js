@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import { login } from '../redux/Reducer/authSlice.js';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import  Navbar  from '../components/Navbar.js';
-import Footer from '../components/Footer.js';
-import { Toast } from 'bootstrap';
+// import  Navbar  from '../components/Navbar.js';
+// import Footer from '../components/Footer.js';
+// import { Toast } from 'bootstrap';
 
 
 

@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faTwitter, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
 
-const iconStyle = {
-  fontSize: "2px", // Adjust the font size as needed
-  marginRight: "10px", // Add some spacing between icons
-  textDecoration: "none",
-  color: "#fff" // Set the icon color to white
-};
+// const iconStyle = {
+//   fontSize: "2px", // Adjust the font size as needed
+//   marginRight: "10px", // Add some spacing between icons
+//   textDecoration: "none",
+//   color: "#fff" // Set the icon color to white
+// };
 
 const footerTextStyle = {
   marginBottom: "15px",

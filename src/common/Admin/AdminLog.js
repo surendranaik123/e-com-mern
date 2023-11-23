@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link,  useNavigate } from 'react-router-dom'
 import img from '../../assets/img.jpg';
 
 
@@ -65,7 +65,7 @@ export const AdminLogAuth = () => {
             <div>
               <center>
             {/* <img src={img1} alt='image' style={{height:"100px",}}/> */}
-            <img src={img} alt='image' style={{height:"100px",}}/>
+            <image src={img} alt='image' style={{height:"100px",}}/>
             </center>
             </div>
             <div style={{ backgroundColor: "blue" }}>

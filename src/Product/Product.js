@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
 
 const Productdata = () => {
-  const state = useSelector(state => console.log(state));
+  // const state = useSelector(state => console.log(state));
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
@@ -65,7 +65,7 @@ const Productdata = () => {
     return (
       <>
         <div className="col-md-6">
-          <img src={product.image} alt="image" style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
+          <image src={product.image} alt="image" style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
         </div>
         <div className="col-md-6">
           <div style={{ fontSize: '1.4rem', fontWeight: 'bold', marginBottom: '10px' }}>

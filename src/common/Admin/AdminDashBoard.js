@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import '../../index.css'
 import DashBoard from "../../pages/Dashboard";
 
@@ -7,7 +7,7 @@ import { Productadmin } from "../../Product/Productadmin";
 import DashboardUser from "../User/DashboardUser";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../App";
+// import { UserContext } from "../../App";
 import { logout } from "../../redux/Reducer/authSlice";
 import ProductStore from "../../Product/ProductStore";
 
@@ -32,7 +32,7 @@ import ProductStore from "../../Product/ProductStore";
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatchRedux = useDispatch();
 
-  
+  console.log(state1,isAuthenticated);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -42,9 +42,9 @@ import ProductStore from "../../Product/ProductStore";
   const Headers = () => {
     return (
       <div className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" >
-        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-2" href="#">
+        <h3 className="navbar-brand col-md-3 col-lg-2 me-0 px-2">
           Admin DashBoard
-        </a>
+        </h3>
         <button
           className="navbar-toggler position-absolute d-md-none collapsed"
           type="button"
@@ -62,9 +62,9 @@ import ProductStore from "../../Product/ProductStore";
         <div className="navbar-nav">
           <div className="nav-item text-nowrap" style={{display:"flex"}}>
             <div style={{color:"white",fontWeight:"bold",fontSize:"1.5rem"}}>({user ? user.fname : "Guest"})</div>
-            <a className="nav-link px-3" onClick={handleLogout} style={{color:"white",fontWeight:"bold"}}>
+            <button className="nav-link px-3" onClick={handleLogout} style={{color:"white",fontWeight:"bold"}}>
              Logout
-            </a>
+            </button>
           </div>
         </div>
       </div>

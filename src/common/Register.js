@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import LoginSvg from "../assets/login.svg";
@@ -147,7 +147,7 @@ export default function Register() {
                 />
               </div>
 
-              {userType != "Admin" ? (
+              {userType !== "Admin" ? (
                 <>
                   <div className="mb-3">
                     <label>PhoneNo</label>
@@ -189,7 +189,7 @@ export default function Register() {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <img
+          <image
             src={LoginSvg}
             alt="image"
             style={{ height: "350px", width: "600px" }}

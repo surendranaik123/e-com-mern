@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import img from "../assets/cart _back.jpg";
 
 const Cart = () => {
-  const location = useLocation();
+  // const location = useLocation();
   // const nameFromLogin = location.state ? location.state.id : "";
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -65,7 +65,7 @@ const Cart = () => {
               <tr>
                 <td>
                   {" "}
-                  <img
+                  <image
                     src={product.image}
                     alt="image"
                     // alt={product.title}
@@ -79,12 +79,12 @@ const Cart = () => {
                 <td>
                   <form>
                     <div class="form-group d-flex justify-content-between">
-                      <a
+                      <button
                         class="btn bnt-sm btn-incre"
                         onClick={() => handleDel(product)}
                       >
                         <i class="fas fa-plus-square"></i>-
-                      </a>
+                      </button>
                       <input
                         type="text"
                         name="quantity"
@@ -93,12 +93,12 @@ const Cart = () => {
                         value={product.qty}
                         readonly
                       />
-                      <a
+                      <button
                         class="btn btn-sm btn-decre"
                         onClick={() => handleAdd(product)}
                       >
                         <i class="fas fa-minus-square"></i>+
-                      </a>
+                      </button>
                     </div>
 
                     {isAuthenticated ? (
@@ -114,12 +114,12 @@ const Cart = () => {
                   </form>
                 </td>
                 <td>
-                  <a
+                  <button
                     class="btn btn-sm btn-danger"
                     onClick={() => handleRemove(product)}
                   >
                     Remove
-                  </a>
+                  </button>
                 </td>
               </tr>
             </tbody>

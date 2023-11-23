@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import React, {useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../css/product.css";
-import { UserContext } from "../App";
-import { Dropdown, Input } from "antd";
+// import { UserContext } from "../App";
+// import { Input } from "antd";
 import {
   ShoppingCartOutlined,
   UsergroupAddOutlined,
-  UserOutlined,
+
   FireOutlined,
 } from "@ant-design/icons";
 import { logout } from "../redux/Reducer/authSlice";
@@ -19,9 +19,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
 function Navbar() {
-  const { Search } = Input;
-  const location = useLocation();
-  const { state, dispatch } = useContext(UserContext);
+  // const { Search } = Input;
+  
+  // const { state, dispatch } = useContext(UserContext);
   const state1 = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
@@ -32,7 +32,7 @@ function Navbar() {
   console.log('User Data:', state1);
 
   //order
-  const orders = useSelector((state) => state.orders);
+  // const orders = useSelector((state) => state.orders);
 
   const handleLogout = () => {
     // Perform any necessary cleanup or API calls here.

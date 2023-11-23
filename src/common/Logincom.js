@@ -124,7 +124,6 @@ import React from "react";
 import LoginSvg from "../assets/login.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/Reducer/authSlice";
@@ -246,7 +245,7 @@ export default function LoginCom() {
         </div>
       </div>
       <div className="w-full md:w-1/2">
-        <img
+        <image
           src={LoginSvg}
           alt="image"
           style={{ height: "350px", width: "600px" }}

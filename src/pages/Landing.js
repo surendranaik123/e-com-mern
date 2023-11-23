@@ -146,10 +146,10 @@ const Landing = () => {
     setPerpage(filteredData.slice(offset, offset + 4));
   }, [currentCategory, data, currentPage, searchCategory]);
 
-  const filterProduct = (cat) => {
-    setCurrentCategory(cat);
-    setCurrentPage(0); // Reset to the first page when applying filter
-  };
+  // const filterProduct = (cat) => {
+  //   setCurrentCategory(cat);
+  //   setCurrentPage(0); // Reset to the first page when applying filter
+  // };
 
   const onSearch = (cat) => {
     setSearchCategory(cat);
