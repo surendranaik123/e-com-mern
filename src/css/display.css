@@ -28,7 +28,7 @@
     width: 240px;
     border: 2px solid black;
     border-radius: 10px;
-    background-image: url("C:\Users\Gokul\Desktop\MERN\CRUD\client\src\assets\mensclothes.jpg");
+    background-image: url("../assets/mensclothes.jpg");
     background-size: 125%;
     background-repeat: no-repeat;
    
@@ -74,7 +74,7 @@
   }
   
   .opacity-image{
-    background-image: url('C:\Users\Gokul\Desktop\MERN\CRUD\client\src\assets\productbackground.jpg');
+    background-image: url('../assets/productbackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -147,7 +147,7 @@
   }  
 
   .home_back {
-    background-image: url("C:/Users/Gokul/Desktop/MERN/CRUD/client/src/assets/Home_back.jpg");
+    background-image: url("../assets/Home_back.jpg");
     position: relative;
     display: flex;
     width:100%;
