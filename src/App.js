@@ -19,7 +19,6 @@ import { OrderDe } from "./orderpage/OrderDe";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
-import Header from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminDashBoard from "./common/Admin/AdminDashBoard";

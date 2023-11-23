@@ -242,16 +242,17 @@ const Order = () => {
           </h6>
         </div>
         <img
-          src={product.image}
-          alt="productimage"
-          className="img1"
-          type="file"
-          lable="Image"
-          name="myFile"
-          id="file-upload"
-          accept=".jpeg, .png, .jpg"
-          onChange={(e) => handleFileUpload(e)}
-        />
+  src={product.image}
+  alt={product.title} // Provide a meaningful description here
+  className="img1"
+  type="file"
+  label="Image"
+  name="myFile"
+  id="file-upload"
+  accept=".jpeg, .png, .jpg"
+  onChange={(e) => handleFileUpload(e)}
+/>
+
 
 {/* <input
                   type="file"

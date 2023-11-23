@@ -49,7 +49,7 @@ function DashBoard() {
             newChartInstance.destroy();
           };
         }
-      }, []); 
+      }, [chartRef]); 
 
 
 
@@ -96,7 +96,7 @@ function DashBoard() {
             newChartInstance.destroy();
           };
         }
-      }, []); 
+      }, [canvasRef]); 
       
     
   return (
