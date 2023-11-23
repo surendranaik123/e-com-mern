@@ -36,7 +36,7 @@ const Landing = () => {
 
   const [Loading, setLoading] = useState(true);
 
-  console.log(product,Landing);
+  console.log(product,Loading);
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/v1/productdata")
@@ -100,14 +100,14 @@ const Landing = () => {
 
   const App = () => (
     <Dropdown menu={{ items, onClick }}>
-      <a onClick={(e) => e.preventDefault()}>
+      <button onClick={(e) => e.preventDefault()}>
         <Space>
           <button className="btn1">
             Click menu item
             <DownOutlined />
           </button>
         </Space>
-      </a>
+      </button>
     </Dropdown>
   );
 console.log(App);
