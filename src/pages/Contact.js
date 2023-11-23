@@ -30,7 +30,7 @@ const Contact = () => {
                     </div>
                     <div class="col-md-6 sec_col">
                         <img src={contactimg}
-                            class="img-fluid2" alt="" />
+                            class="img-fluid2" alt="presentation" />
                     </div>
                 </div>
                 <div class="row-last">

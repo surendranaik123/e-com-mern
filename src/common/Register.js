@@ -191,7 +191,7 @@ export default function Register() {
         <div className="w-full md:w-1/2">
           <image
             src={LoginSvg}
-            alt="image"
+            alt="presentation"
             style={{ height: "350px", width: "600px" }}
           />
         </div>

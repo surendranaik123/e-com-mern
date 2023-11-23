@@ -70,7 +70,7 @@ function Navbar() {
               {/* Add your logo here */}
               <img
                 src={img}
-                alt="image"
+                alt="presentation"
                 style={{ height: "70px", width: "70px", marginLeft: "-40px" }}
               />
               <NavLink
@@ -144,7 +144,7 @@ function Navbar() {
               
                  <center style={{marginLeft:"20px",marginTop:"8px",marginRight:"-520px",display:"flex"}}>
               
-                 <img src={img1} alt='image' style={{height:"50px",width:"50px"}} onClick={handleProfileClick}/>
+                 <img src={img1} alt='presentation' style={{height:"50px",width:"50px"}} onClick={handleProfileClick}/>
                 
                
                 <NavDropdown 

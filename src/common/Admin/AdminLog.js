@@ -65,7 +65,7 @@ export const AdminLogAuth = () => {
             <div>
               <center>
             {/* <img src={img1} alt='image' style={{height:"100px",}}/> */}
-            <image src={img} alt='image' style={{height:"100px",}}/>
+            <image src={img} alt='presentation' style={{height:"100px",}}/>
             </center>
             </div>
             <div style={{ backgroundColor: "blue" }}>

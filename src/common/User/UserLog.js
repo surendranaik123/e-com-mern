@@ -39,7 +39,7 @@ const UserLoginAuth = () => {
       <div className="row">
         <div className="col-md-7">
           <center>
-            <img src={img} alt="image" style={{ height: '100px' }} />
+            <img src={img} alt="presentation" style={{ height: '100px' }} />
           </center>
           <div style={{ backgroundColor: 'blue' }}>
             <h1 className="text-white text-center mt-2">User Login Page</h1>

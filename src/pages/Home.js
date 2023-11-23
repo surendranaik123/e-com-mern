@@ -117,7 +117,7 @@ const Home = () => {
             {perpage.map((product) => (
               <div className='product' key={product.id}>
                 <h5 style={{ color: "blue" }}>{product.category}</h5>
-                <img src={product.image} className="image" alt="image" />
+                <img src={product.image} className="image" alt="presentation" />
                 <h4>{product.title && product.title.substring(0, 15)}</h4>
                 <h4>Price:${product.price}</h4>
                 <h5>Rating: {product.rating.rate}</h5>
@@ -173,7 +173,7 @@ const Home = () => {
             </p>
             <button style={{ borderRadius: "5px", padding: "5px", width: 'auto', height: "40px", color: "blue" }} onClick={handleProducts} >OUR NEW COLLECTION</button>
           </div>
-          <img className='home_img' src={img1} alt='image' />
+          <img className='home_img' src={img1} alt='presentation' />
         </div>
 
         <div style={{ display: "flex", justifyContent: "center" }}  >

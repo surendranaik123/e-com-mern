@@ -178,7 +178,7 @@ const Landing = () => {
                   <img
                     src={product.image}
                     className="prodduct_img"
-                    alt="image"
+                    alt="presentation"
                     // alt={`Product: ${product.title}`}
                   />
 
@@ -299,7 +299,7 @@ const Landing = () => {
                 <img
                   src={product.image}
                   className="prodduct_img"
-                  alt={`Product: ${product.title}`}
+                  alt="presentation"
                 />
                 <h5
                   style={{
@@ -390,7 +390,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img1} alt="image" />
+              <img className="home_img" src={img1} alt="presentation" />
             </div>
           </div>
 
@@ -431,7 +431,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img2} alt="image" />
+              <img className="home_img" src={img2} alt="presentation" />
             </div>
           </div>
           <div>
@@ -468,7 +468,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img3} alt="image" />
+              <img className="home_img" src={img3} alt="presentation" />
             </div>
           </div>
         </Carousel>
