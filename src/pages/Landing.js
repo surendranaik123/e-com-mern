@@ -50,65 +50,65 @@ const Landing = () => {
       });
   }, []);
 
-  // const onClick = ({ key }) => {
-  //   message.info(`Click on item ${key}`);
-  // };
+  const onClick = ({ key }) => {
+    message.info(`Click on item ${key}`);
+  };
 
-  // const items = [
-  //   {
-  //     label: (
-  //       <h5 className="btn1" onClick={() => filterProduct("")}>
-  //         All Products
-  //       </h5>
-  //     ),
-  //     key: "All Products",
-  //   },
-  //   {
-  //     label: (
-  //       <h5 className="btn1" onClick={() => filterProduct("men's clothing")}>
-  //         Men's Clothing
-  //       </h5>
-  //     ),
-  //     key: "Mens Clothing",
-  //   },
-  //   {
-  //     label: (
-  //       <h5 className="btn1" onClick={() => filterProduct("women's clothing")}>
-  //         Women's Clothing
-  //       </h5>
-  //     ),
-  //     key: "Womens Clothing",
-  //   },
-  //   {
-  //     label: (
-  //       <h5 className="btn1" onClick={() => filterProduct("jewelery")}>
-  //         Jewelry
-  //       </h5>
-  //     ),
-  //     key: "Jewelry",
-  //   },
-  //   {
-  //     label: (
-  //       <h5 className="btn1" onClick={() => filterProduct("electronics")}>
-  //         Electronic
-  //       </h5>
-  //     ),
-  //     key: "Electronic",
-  //   },
-  // ];
+  const items = [
+    {
+      label: (
+        <h5 className="btn1" onClick={() => filterProduct("")}>
+          All Products
+        </h5>
+      ),
+      key: "All Products",
+    },
+    {
+      label: (
+        <h5 className="btn1" onClick={() => filterProduct("men's clothing")}>
+          Men's Clothing
+        </h5>
+      ),
+      key: "Mens Clothing",
+    },
+    {
+      label: (
+        <h5 className="btn1" onClick={() => filterProduct("women's clothing")}>
+          Women's Clothing
+        </h5>
+      ),
+      key: "Womens Clothing",
+    },
+    {
+      label: (
+        <h5 className="btn1" onClick={() => filterProduct("jewelery")}>
+          Jewelry
+        </h5>
+      ),
+      key: "Jewelry",
+    },
+    {
+      label: (
+        <h5 className="btn1" onClick={() => filterProduct("electronics")}>
+          Electronic
+        </h5>
+      ),
+      key: "Electronic",
+    },
+  ];
 
-  // const App = () => (
-  //   <Dropdown menu={{ items, onClick }}>
-  //     <a onClick={(e) => e.preventDefault()}>
-  //       <Space>
-  //         <button className="btn1">
-  //           Click menu item
-  //           <DownOutlined />
-  //         </button>
-  //       </Space>
-  //     </a>
-  //   </Dropdown>
-  // );
+  const App = () => (
+    <Dropdown menu={{ items, onClick }}>
+      <a onClick={(e) => e.preventDefault()}>
+        <Space>
+          <button className="btn1">
+            Click menu item
+            <DownOutlined />
+          </button>
+        </Space>
+      </a>
+    </Dropdown>
+  );
 
   useEffect(() => {
     // Fetch product data from API
@@ -174,7 +174,7 @@ const Landing = () => {
                     paddingBottom: "20px",
                   }}
                 >
-                  <image
+                  <img
                     src={product.image}
                     className="prodduct_img"
                     alt="image"
@@ -389,7 +389,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <image className="home_img" src={img1} alt="image" />
+              <img className="home_img" src={img1} alt="image" />
             </div>
           </div>
 
@@ -430,7 +430,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <image className="home_img" src={img2} alt="image" />
+              <img className="home_img" src={img2} alt="image" />
             </div>
           </div>
           <div>
@@ -467,7 +467,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <image className="home_img" src={img3} alt="image" />
+              <img className="home_img" src={img3} alt="image" />
             </div>
           </div>
         </Carousel>
