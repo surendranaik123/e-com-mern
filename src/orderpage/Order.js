@@ -243,6 +243,7 @@ const Order = () => {
         </div>
         <img
           src={product.image}
+          alt="image"
           className="img1"
           type="file"
           lable="Image"
