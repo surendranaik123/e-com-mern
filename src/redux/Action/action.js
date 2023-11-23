@@ -1,4 +1,4 @@
-import {ADDITEM,DELITEM,REMOVE, SET_USER} from '../Type'
+import {ADDITEM,DELITEM,REMOVE} from '../Type'
 
 export const addCart = (product) => {
     console.log(product);
