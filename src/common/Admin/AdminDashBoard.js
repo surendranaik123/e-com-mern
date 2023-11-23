@@ -6,10 +6,9 @@ import { OrderDetails } from "../../orderpage/OrderDetails";
 import { Productadmin } from "../../Product/Productadmin";
 import DashboardUser from "../User/DashboardUser";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
 import { logout } from "../../redux/Reducer/authSlice";
-import Navbar from "../../components/Navbar";
 import ProductStore from "../../Product/ProductStore";
 
 
@@ -26,7 +25,7 @@ import ProductStore from "../../Product/ProductStore";
 
   
  
-  const { state, dispatch } = useContext(UserContext);
+  // const { state, dispatch } = useContext(UserContext);
   const state1 = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);

@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 import { addCart, delCart, remCart } from "../redux/Action/action";
 import Navbar from "../components/Navbar";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer";
 import img from "../assets/cart _back.jpg";
 
 const Cart = () => {
   const location = useLocation();
-  const nameFromLogin = location.state ? location.state.id : "";
+  // const nameFromLogin = location.state ? location.state.id : "";
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const state = useSelector((state) => state.cart); // Access the cart state from the Redux store

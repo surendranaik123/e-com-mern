@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
-import { Form, NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import "../css/product.css"
-import  Home  from '../pages/Home';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, message, Space } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { shuffle } from 'lodash';
 
 
@@ -27,7 +24,7 @@ const Products = () => {
   const [user, setUser] = useState([]);
   const [searchCategory, setSearchCategory] = useState("");
 
-  console.log(data);
+  console.log(data,user);
   // Extract the id parameter from the route
   const { id } = useParams();
 
@@ -63,11 +60,11 @@ const Products = () => {
 
   const App = () => (
     <Dropdown menu={{items,onClick,}}>
-      <a onClick={(e) => e.preventDefault()}>
+      <button onClick={(e) => e.preventDefault()}>
         <Space>
           <button className='btn1'>Click menu item<DownOutlined /></button>
         </Space>
-      </a>
+      </button>
     </Dropdown>
   );
 
