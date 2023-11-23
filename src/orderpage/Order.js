@@ -8,9 +8,9 @@ import Rating from "react-rating-stars-component";
 
 const Order = () => {
   const user = useSelector((state) => state.auth.user);
-  const UserName = user ? user.name : "Guest";
+
   const navigate = useNavigate();
-  const location = useLocation();
+  
   const { id } = useParams();
   const [placeDetails, setPlaceDetails] = useState();
   const [product, setProduct] = useState({});
