@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
-import { Form, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import { Carousel, Dropdown, message, Space } from "antd";
 import { Input } from "antd";
-import Footer from "../components/Footer";
+
 import { shuffle } from "lodash";
-import img from "../assets/product_img.png";
+
 import img1 from "../assets/shoping1.png";
 import img2 from "../assets/shoping2.png";
 import img3 from "../assets/shoping3.png";
@@ -28,7 +28,7 @@ const Landing = () => {
   const [searchCategory, setSearchCategory] = useState("");
   const navigate = useNavigate();
   const [productsToShow, setProductsToShow] = useState(10);
-  const [rating, setRating] = useState([0, 0, 0, 0, 0]);
+  // const [rating, setRating] = useState([0, 0, 0, 0, 0]);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   console.log(data);
@@ -36,7 +36,7 @@ const Landing = () => {
 
   const [Loading, setLoading] = useState(true);
 
-  console.log(product);
+  console.log(product,Loading);
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/v1/productdata")
@@ -98,18 +98,18 @@ const Landing = () => {
     },
   ];
 
-  const App = () => (
-    <Dropdown menu={{ items, onClick }}>
-      <a onClick={(e) => e.preventDefault()}>
-        <Space>
-          <button className="btn1">
-            Click menu item
-            <DownOutlined />
-          </button>
-        </Space>
-      </a>
-    </Dropdown>
-  );
+  // const App = () => (
+  //   <Dropdown menu={{ items, onClick }}>
+  //     <a onClick={(e) => e.preventDefault()}>
+  //       <Space>
+  //         <button className="btn1">
+  //           Click menu item
+  //           <DownOutlined />
+  //         </button>
+  //       </Space>
+  //     </a>
+  //   </Dropdown>
+  // );
 
   useEffect(() => {
     // Fetch product data from API
@@ -175,7 +175,7 @@ const Landing = () => {
                     paddingBottom: "20px",
                   }}
                 >
-                  <img
+                  <image
                     src={product.image}
                     className="prodduct_img"
                     alt="image"
@@ -390,7 +390,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img1} alt="image" />
+              <image className="home_img" src={img1} alt="image" />
             </div>
           </div>
 
@@ -431,7 +431,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img2} alt="image" />
+              <image className="home_img" src={img2} alt="image" />
             </div>
           </div>
           <div>
@@ -468,7 +468,7 @@ const Landing = () => {
                   Shop Now ..
                 </button>
               </div>
-              <img className="home_img" src={img3} alt="image" />
+              <image className="home_img" src={img3} alt="image" />
             </div>
           </div>
         </Carousel>

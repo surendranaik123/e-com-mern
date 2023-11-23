@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { initialState, reducer } from "./components/UseReducer";
 import { Provider } from "react-redux";
