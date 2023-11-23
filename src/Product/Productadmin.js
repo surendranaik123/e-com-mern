@@ -35,7 +35,7 @@ export const Productadmin = () => {
       {data.map((category) => (<div>
          <div style={{marginLeft:"15px" ,fontWeight:"bold"}}>{category.name}</div> 
         <div className="card" style={{ width: '18rem',margin:"10px",backgroundColor:"lightgrey" }} key={category._id}>
-          <img src={category.image} className="card-img-top" alt="Subscription Image"  style={{borderRadius:"0px",height:"200px",width:"300px"}}/>
+          <img src={category.image} className="card-img-top" alt="SubscriptionImage"  style={{borderRadius:"0px",height:"200px",width:"300px"}}/>
           <h5 className="card-title" style={{marginLeft:"6px",fontSize:"1.3rem",fontWeight:"bold"}}>{category.category}</h5>
           <h5 className="card-title" style={{ marginLeft: "6px", fontSize: "1rem" }}>{category.description.substring(0, 50)}</h5>
 

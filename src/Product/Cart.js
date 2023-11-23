@@ -68,7 +68,8 @@ const Cart = () => {
                   {" "}
                   <img
                     src={product.image}
-                    alt={product.title}
+                    alt="image"
+                    // alt={product.title}
                     height="70px"
                     width="70px"
                   />

@@ -57,7 +57,7 @@ export default function ProductsData() {
                   <img
                     src={product.image}
                     className="card-img-top"
-                    alt="Subscription Image"
+                    alt="SubscriptionImage"
                     style={{ borderRadius: "0px", height: "250px" }}
                   />
                   <div className="card-body" style={{ height: "40px" }}>

@@ -93,7 +93,7 @@ useEffect(() => {
     return (
       <>
         <div className="col-md-6">
-          <img src={product.image} alt={product.title} style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
+          <img src={product.image} alt="image" style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
         </div>
         <div className="col-md-6">
           <div style={{ fontSize: '1.4rem', fontWeight: 'bold', marginBottom: '10px' }}>

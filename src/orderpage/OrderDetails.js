@@ -62,7 +62,7 @@ export const OrderDetails = () => {
       {data.map((category) => (<div>
          <div style={{marginLeft:"15px" ,fontWeight:"bold"}}>{category.name}</div> 
         <div className="card" style={{ width: '18rem',margin:"10px",backgroundColor:"lightgrey" }} key={category._id}>
-          <img src={category.image} className="card-img-top" alt="Subscription Image"  style={{borderRadius:"0px",height:"200px"}}/>
+          <img src={category.image} className="card-img-top" alt="SubscriptionImage"  style={{borderRadius:"0px",height:"200px"}}/>
           <div className="card-body" style={{height:"40px",display:"flex"}}>
             <h5 className="card-title" style={{ margin: "auto 0",  flex: "1" ,}}>Prices:${category.totalPrice}</h5>
             <p className="card-text" style={{ margin: "auto 0",  textAlign: "right" }}>{category.name}</p>

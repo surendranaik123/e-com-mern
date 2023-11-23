@@ -178,7 +178,8 @@ const Landing = () => {
                   <img
                     src={product.image}
                     className="prodduct_img"
-                    alt={`Product: ${product.title}`}
+                    alt="image"
+                    // alt={`Product: ${product.title}`}
                   />
 
                   <h5

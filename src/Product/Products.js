@@ -153,7 +153,7 @@ const Products = () => {
          {perpage.map((product) => (<div>
          <div style={{marginLeft:"15px" ,fontWeight:"bold"}}>{product.name}</div> 
         <div className="card" style={{ width: '16rem',margin:"10px",backgroundColor:"lightgrey",height:"25rem" }} key={product._id}>
-          <img src={product.image} className="card-img-top" alt="Subscription Image"  style={{borderRadius:"0px",height:"250px"}}/>
+          <img src={product.image} className="card-img-top" alt="SubscriptionImage"  style={{borderRadius:"0px",height:"250px"}}/>
           <div className="card-body" style={{height:"40px"}}>
            <h4 style={{fontSize:"1.3rem"}}>{product.category}</h4>
           
