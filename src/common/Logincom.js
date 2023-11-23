@@ -136,6 +136,7 @@ export default function LoginCom() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  console.log(setError);
   async function handleSubmit(e) {
     e.preventDefault();
 

@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
 
 const Productdata = () => {
-  // const state = useSelector(state => console.log(state));
+  const state = useSelector(state => console.log(state));
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-
+ console.log(state);
   useEffect(() => {
     console.log('Product ID from route:', id);
 

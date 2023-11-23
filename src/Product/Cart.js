@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addCart, delCart, remCart } from "../redux/Action/action";
 import Navbar from "../components/Navbar";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import img from "../assets/cart _back.jpg";
 
 const Cart = () => {

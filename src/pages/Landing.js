@@ -28,7 +28,7 @@ const Landing = () => {
   const [searchCategory, setSearchCategory] = useState("");
   const navigate = useNavigate();
   const [productsToShow, setProductsToShow] = useState(10);
-  const [rating, setRating] = useState([0, 0, 0, 0, 0]);
+  // const [rating, setRating] = useState([0, 0, 0, 0, 0]);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   console.log(data);
@@ -36,7 +36,7 @@ const Landing = () => {
 
   const [Loading, setLoading] = useState(true);
 
-  console.log(product);
+  console.log(product,Landing);
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/v1/productdata")
@@ -110,7 +110,7 @@ const Landing = () => {
       </a>
     </Dropdown>
   );
-
+console.log(App);
   useEffect(() => {
     // Fetch product data from API
     axios
