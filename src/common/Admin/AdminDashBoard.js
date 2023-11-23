@@ -25,7 +25,7 @@ import ProductStore from "../../Product/ProductStore";
   const [activeNavItem, setActiveNavItem] = useState('Home');
 
   
-  const location = useLocation();
+ 
   const { state, dispatch } = useContext(UserContext);
   const state1 = useSelector((state) => state.cart);
   const navigate = useNavigate();
