@@ -12,31 +12,62 @@ const Productdata = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+//   useEffect(() => {
+//     const getProduct = async () => {
+//       try {
+//         setLoading(true);
+//         const response = await fetch(`http://localhost:9000/api/v1/productdata/${id}`);
+
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
+
+//         const productData = await response.json();
+//         setProduct(productData);
+//       } catch (error) {
+//         console.error('Error fetching product data:', error.message);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     getProduct();
+//   }, [id]);
+
+//   const addProduct = product => {
+//     const a = dispatch(addCart(product));
+//     console.log('check', a);
+//   };
+
+
+useEffect(() => {
+    console.log('Product ID from route:', id);
+  
     const getProduct = async () => {
       try {
         setLoading(true);
         const response = await fetch(`http://localhost:9000/api/v1/productdata/${id}`);
-
+  
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
+  
         const productData = await response.json();
         setProduct(productData);
+        console.log('Fetched Product Data:', productData);
       } catch (error) {
         console.error('Error fetching product data:', error.message);
       } finally {
         setLoading(false);
       }
     };
-
+  
     getProduct();
   }, [id]);
-
+  
   const addProduct = product => {
-    const a = dispatch(addCart(product));
-    console.log('check', a);
+    console.log('Adding Product to Cart:', product);
+    dispatch(addCart(product));
   };
 
   const Loading = () => {
