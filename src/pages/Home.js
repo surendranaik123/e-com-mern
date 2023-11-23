@@ -156,7 +156,7 @@ const Home = () => {
    }
   return (
     <>
-      <Navbar />
+    
 
       <div style={{ backgroundColor: "lightgray" }}>
         <center>

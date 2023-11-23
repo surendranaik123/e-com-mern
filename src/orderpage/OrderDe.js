@@ -43,7 +43,7 @@ export const OrderDe = () => {
  
   return (
     <div>
-      <Navbar/>
+
       <h2 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>Order History</h2>
       <center>
       <h2 style={{color:"green",marginTop:"-20px"}}>--------------------</h2>

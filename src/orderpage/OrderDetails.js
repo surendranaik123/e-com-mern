@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/order.css';
 import { useNavigate } from 'react-router-dom';
 import  Navbar from '../components/Navbar';
-
+import img from '../assets/Home.jpg'
 export const OrderDetails = () => {
   const navigate=useNavigate()
   const [data, setData] = useState([]);
@@ -15,8 +15,6 @@ export const OrderDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await axios.get(`http://localhost:9000/api/v1/orders/name`);
-        // const response = await axios.get(`http://localhost:9000/api/v1/orders/email`);
         const response = await axios.get('http://localhost:9000/api/v1/orders');
         setData(response.data);
       } catch (error) {
@@ -29,39 +27,51 @@ export const OrderDetails = () => {
   }, []);
  
   console.log(data);
-  const handleSearch = async (e) => {
-    e.preventDefault();
+  // const handleSearch = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const response = await axios.get(`http://localhost:9000/api/v1/orders/name?name=${searchedName}`);
-      setSearchResult(response.data);
+  //   try {
+  //     const response = await axios.get(`http://localhost:9000/api/v1/orders/name?name=${searchedName}`);
+  //     setSearchResult(response.data);
 
-      if (!searchedName) {
-        setError('Please enter a user name to search.');
-        setSearchResult([]);
-        setSuccess('');
-      } else if (response.data.length === 0) {
-        setError('No orders found for the provided name.');
-        setSearchResult([]);
-        setSuccess('');
-      } else {
-        setSuccess('Search successful.');
-        setError('');
-        // navigate('/order')
-      }
-    } catch (error) {
-      setError('An error occurred during the search.');
-      setSearchResult([]);
-      setSuccess('');
-    }
+  //     if (!searchedName) {
+  //       setError('Please enter a user name to search.');
+  //       setSearchResult([]);
+  //       setSuccess('');
+  //     } else if (response.data.length === 0) {
+  //       setError('No orders found for the provided name.');
+  //       setSearchResult([]);
+  //       setSuccess('');
+  //     } else {
+  //       setSuccess('Search successful.');
+  //       setError('');
+  //       // navigate('/order')
+  //     }
+  //   } catch (error) {
+  //     setError('An error occurred during the search.');
+  //     setSearchResult([]);
+  //     setSuccess('');
+  //   }
 
-    console.log(searchResult);
-  };
+  //   console.log(searchResult);
+  // };
 
   return (
-    <div>
-      <Navbar/>
-      <h2 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>Order Details</h2>
+    <div style={{margin:"20px",backgroundColor:"lightblue",padding:"30px",paddingTop:"30px"}}>
+      <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center"}}>
+      {data.map((category) => (<div>
+         <div style={{marginLeft:"15px" ,fontWeight:"bold"}}>{category.name}</div> 
+        <div className="card" style={{ width: '18rem',margin:"10px",backgroundColor:"lightgrey" }} key={category._id}>
+          <img src={category.image} className="card-img-top" alt="Subscription Image"  style={{borderRadius:"0px",height:"200px"}}/>
+          <div className="card-body" style={{height:"40px",display:"flex"}}>
+            <h5 className="card-title" style={{ margin: "auto 0",  flex: "1" ,}}>Prices:${category.totalPrice}</h5>
+            <p className="card-text" style={{ margin: "auto 0",  textAlign: "right" }}>{category.name}</p>
+          </div>
+        </div>
+        </div>))}
+    </div>
+     
+      {/* <h2 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>Order Details</h2>
       <center>
       <h2 style={{color:"green",marginTop:"-20px"}}>--------------------</h2>
       </center>
@@ -110,8 +120,8 @@ export const OrderDetails = () => {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+        </table> 
+      </div> */}
     </div>
   );
 };

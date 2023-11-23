@@ -1,10 +1,8 @@
-/* CSS for Order Component */
-
 .order-page {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: aqua;
+    background-color:lightgray;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -18,20 +16,27 @@
     height: 150px;
     width: 100;
     background-color: blueviolet;
-    border-radius: 200px;
+    border-radius: 0px;
+    margin-bottom: 30px;
   }
   .title1{
     margin-left: 170px;
-    margin-top: -140px;
+    margin-top: -180px;
+    margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
     color: brown;
   }
   .price1{
+    display:flex;
+    margin-top: 25px;
     margin-left: 170px;
-    color: blueviolet
+    color: darkmagenta
   }
   .rating1{
     margin-left: 170px;
-    color: green;
+  
+   
   }
  .qty{
 
@@ -64,3 +69,32 @@
  .orderde1{
   background-color: aquamarine;
  }
+ .placeorder{
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 30px;
+  padding: 18px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: green !important;
+
+ }
+
+
+ .placeorder:hover{
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 30px;
+  padding: 18px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: blue  !important;
+ } 

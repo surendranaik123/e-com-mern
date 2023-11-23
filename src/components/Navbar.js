@@ -28,6 +28,9 @@ function Navbar() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatchRedux = useDispatch();
 
+  console.log('User Data:', user);
+  console.log('User Data:', state1);
+
   //order
   const orders = useSelector((state) => state.orders);
 
@@ -68,18 +71,19 @@ function Navbar() {
               <img
                 src={img}
                 alt="image"
-                style={{ height: "80px", width: "80px", marginLeft: "-70px" }}
+                style={{ height: "70px", width: "70px", marginLeft: "-40px" }}
               />
               <NavLink
-                className="navbar-brand fw-bold fs-4"
+                className="navbar-brand fw-bold fs-2"
                 to="/"
-                style={{ marginTop: "15px", marginLeft: "10px" }}
+                style={{ marginTop: "10px", marginLeft: "10px" }}
               >
                 E-com
               </NavLink>
             </div>
           </center>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* <div className="collapse navbar-collapse" id="navbarSupportedContent"> */}
+          <div id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li
                 className="nav-item"
@@ -122,7 +126,7 @@ function Navbar() {
                 <>
                   <li>
                     <NavLink
-                      to={`/order?username=${user ? user.name : ""}`}
+                      to={`/order?username=${user ? user.fname : ""}`}
                       className="order"
                     >
                       <FireOutlined /> Order
@@ -144,7 +148,7 @@ function Navbar() {
                 
                
                 <NavDropdown 
-                  title={user ? user.name : "Guest"}
+                  title={user ? user.fname : "Guest"}
                   id="basic-nav-dropdown" style={{marginTop:"10px",}}
                   
                 >

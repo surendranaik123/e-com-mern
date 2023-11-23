@@ -12,11 +12,12 @@ import { Toast } from 'bootstrap';
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState('');
     const [data, setData] = useState(null); // Initialize data as null
     const [LoginErrorPassword, setLoginErrorPassword] = useState('');
+
     useEffect(() => {
         axios.get("http://localhost:9000/api/v1/users")
             .then((res) => {
@@ -42,6 +43,7 @@ const Login = () => {
                     // Toast.sucess('Login successful!')
                     alert('Login successful!');
                     navigate('/');
+                    console.log("data",user);
                 } else {
                     if (!data.some((userData) => userData.password.toLowerCase() === password.toLowerCase())) {
                         // Invalid password
@@ -68,7 +70,7 @@ const Login = () => {
 
     return (
         <div style={{overflowX:"hidden"}}>
-            <Navbar />
+           
             <div className="container" style={{ marginLeft: '24rem',paddingTop:"50px",paddingBottom:"50px" }}>
                 <div className="row">
                     <div className="col-md-7">
@@ -121,7 +123,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </div>
     );
 };

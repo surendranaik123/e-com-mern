@@ -132,37 +132,48 @@ const Products = () => {
 
   return (
     <>
-    <Navbar/>
-      
-      {/* <h5 style={{margin:"40px"}}>UserEmail:"{location.state?.id || 'Guest'}"</h5> */}
-
+ <Navbar/>
       <div className='back'>
    
-      <center>
-          <Search className="search" placeholder="Search by category" onSearch={onSearch}
-            enterButton style={{ width: "450px", padding: "20px" }} />
+        <center>
+          <Search
+            className="search"
+            placeholder="Search by category"
+            onSearch={onSearch}
+            enterButton
+            style={{ width: "550px",backgroundColor:"blue",marginTop:"50px" }}
+          />
         </center>
+        
         <div className='display' >
           <App/>
 
           <div className='home'>
-            {perpage.map((product) => (
-              <div className='product' key={product.id}>
-                <h5 style={{ color: "blue" }}>{product.category}</h5>
-                <img src={product.image} className="image" alt={`Product: ${product.title}`} />
-                <h4>{product.title && product.title.substring(0, 15)}</h4>
-                <h4>Price:${product.price}</h4>
-                <h5>Rating: {product.rating.rate}</h5>
-             
-                  <NavLink to={`/product/${product.id}`} >
-                    <button className='add'>Add To Cart</button>
-                  </NavLink>
-                  <NavLink to={`/order/${product.id}`} state={{ UserEmail: location.state?.id }}>
-                    <button className='buy'>Buy Now</button>
-                  </NavLink>
-             
-              </div>
-            ))}
+
+         {perpage.map((product) => (<div>
+         <div style={{marginLeft:"15px" ,fontWeight:"bold"}}>{product.name}</div> 
+        <div className="card" style={{ width: '16rem',margin:"10px",backgroundColor:"lightgrey",height:"25rem" }} key={product._id}>
+          <img src={product.image} className="card-img-top" alt="Subscription Image"  style={{borderRadius:"0px",height:"250px"}}/>
+          <div className="card-body" style={{height:"40px"}}>
+           <h4 style={{fontSize:"1.3rem"}}>{product.category}</h4>
+          
+         <div >
+          <h4 style={{ margin: "auto 0",  flex: "1" ,marginTop:"15px" }}>Price:${product.price}</h4>
+           <h5 style={{ margin: "auto 0",  textAlign: "right",marginTop:"-18px" }}>Rating: {product.rating.rate}</h5>
+           </div> 
+                <NavLink  style={{ margin: "auto 0",  flex: "1" ,marginTop:"15px" }} to={`/product/${product.id}`} >
+                    <button  className='addtocart'>Add To Cart</button>
+                </NavLink>
+           
+                  <NavLink to={`/order/${product.id}`} style={{ margin: "auto 0",  textAlign: "right",marginTop:"-18px" }}
+                  state={{ UserEmail: location.state?.id }}>
+                    <button  className='buynow'>Buy Now</button>
+                   </NavLink>
+         
+          </div>
+        </div>
+        </div>))} 
+        
           </div>
 
 
@@ -183,7 +194,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 };

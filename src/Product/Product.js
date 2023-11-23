@@ -26,6 +26,8 @@ const Product = () => {
         getProduct();
     }, []);
 
+  console.log(product);
+
 
     const addProduct = (product) => {
        const a= dispatch(addCart(product));
@@ -35,6 +37,7 @@ const Product = () => {
     const Loading = () => {
         return(
             <> 
+            
                
                <div className="col-md-6">
                     <Skeleton height={400}/>
@@ -57,35 +60,36 @@ const Product = () => {
         return(
             <>
                 <div className="col-md-6">
-                    <img src={product.image} alt={product.title} style={{height:"350px",width:"350px"}} />
+                    <img src={product.image} alt={product.title} style={{height:"350px",width:"350px",borderRadius:"1px"}} />
                 </div>
                 <div className="col-md-6">
+                    <div style={{fontSize:"1.4rem",fontWeight:"bold",marginBottom:"10px"}}> <h4>{product.category} </h4></div>
                     <div>
-                    <h4>{product.category} </h4>
+                    <h3 style={{fontSize:"1.1rem",marginBottom:"10px"}}>{product.title}</h3>
                     </div>
-                    <div>
-                    <h3 className="display-8">{product.title}</h3>
-                    </div>
-                    <div>
-                    <p className="lead fw-bolder">
-                        Rating {product.rating && product.rating.rate} 
-                        <i className="fa fa-star"></i>
-                    </p>
-                    </div>
-                    <div>
-                    <h3 className="display-7 fw-bold my-6">
-                        $ {product.price}
+
+                    <div style={{display:"flex",marginBottom:"10px"}}>
+                    <h3  style={{display:"flex"}}>
+                       <h2 style={{fontSize:"1.5rem",color:"blue" ,fontWeight:"bold"}}>Price:</h2> 
+                       <h2 style={{fontWeight:"bold",marginTop:"4px",fontSize:"1.3rem"}}>${product.price}</h2>
+                    </h3>
+
+                    <h3  style={{display:"flex" ,marginLeft:"30px"}}>
+                       <h2 style={{fontSize:"1.5rem",color:"green" ,fontWeight:"bold"}}>Rating:</h2> 
+                       <h2 style={{fontWeight:"bold",marginTop:"4px",fontSize:"1.3rem"}}>{product.rating && product.rating.rate} </h2>
                     </h3>
                     </div>
-                    <div>
-                    <p className="lead">{product.description}</p>
-                    </div>
-                    <div>
+
                 
-                    <button className="add" onClick={()=>addProduct(product)}>Add to Cart</button>
-                    <NavLink to="/cart"><button className="buy">Go to Cart</button>
-                    </NavLink>
+                    <div>
+                    <p style={{fontSize:"1.1rem"}}>{product.description}</p>
                     </div>
+
+                    <div style={{marginLeft:"13px"}}>
+                    <button className="add" onClick={()=>addProduct(product)} >Add to Cart</button>
+                    <NavLink to="/cart"><button className="buy">Go to Cart</button></NavLink>
+                    </div>
+
                 </div>
             </>
         )
@@ -93,13 +97,13 @@ const Product = () => {
 
     return (
         <div>
-            <Navbar/> 
+        <Navbar/>
             <div className="container py-5">
                 <div className="row py-4">
                     {loading ? <Loading /> : <ShowProduct />}
                 </div>
             </div>
-            <Footer/>
+           
         </div>
     );
 };

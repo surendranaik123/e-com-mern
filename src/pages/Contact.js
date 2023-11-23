@@ -4,7 +4,7 @@ import contactimg from "../assets/contact.jpg"
 const Contact = () => {
     return (
         <>
-            <Navbar />
+         <Navbar/>
             <div class="bg-background"></div>
             <div class="container py-5">
                 <div class="row py-2 g-3">

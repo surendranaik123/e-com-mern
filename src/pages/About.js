@@ -7,7 +7,7 @@ import Team3 from "../assets/team3.jpg";
 const About = () => {
   return (
     <>
-      <Navbar/>
+    <Navbar/>
       <div className="about-section">
         <h1>About Us Page</h1>
         <h2>Some text about who we are and what we do.</h2>
