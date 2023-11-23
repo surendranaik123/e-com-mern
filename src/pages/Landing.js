@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { Carousel} from "antd";
+import { DownOutlined } from "@ant-design/icons";
+import { Carousel, Dropdown, message, Space } from "antd";
 import { Input } from "antd";
 
 import { shuffle } from "lodash";
@@ -27,7 +28,7 @@ const Landing = () => {
   const [searchCategory, setSearchCategory] = useState("");
   const navigate = useNavigate();
   const [productsToShow, setProductsToShow] = useState(10);
-  // const [rating, setRating] = useState([0, 0, 0, 0, 0]);
+  const [rating, setRating] = useState([0, 0, 0, 0, 0]);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   console.log(data);
@@ -35,7 +36,7 @@ const Landing = () => {
 
   const [Loading, setLoading] = useState(true);
 
-  console.log(product,Loading);
+  console.log(product);
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/v1/productdata")
@@ -146,10 +147,10 @@ const Landing = () => {
     setPerpage(filteredData.slice(offset, offset + 4));
   }, [currentCategory, data, currentPage, searchCategory]);
 
-  // const filterProduct = (cat) => {
-  //   setCurrentCategory(cat);
-  //   setCurrentPage(0); // Reset to the first page when applying filter
-  // };
+  const filterProduct = (cat) => {
+    setCurrentCategory(cat);
+    setCurrentPage(0); // Reset to the first page when applying filter
+  };
 
   const onSearch = (cat) => {
     setSearchCategory(cat);
