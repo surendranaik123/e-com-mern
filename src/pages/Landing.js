@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { DownOutlined } from "@ant-design/icons";
-import { Carousel, Dropdown, message, Space } from "antd";
+import { Carousel} from "antd";
 import { Input } from "antd";
 
 import { shuffle } from "lodash";
@@ -51,52 +50,52 @@ const Landing = () => {
       });
   }, []);
 
-  const onClick = ({ key }) => {
-    message.info(`Click on item ${key}`);
-  };
+  // const onClick = ({ key }) => {
+  //   message.info(`Click on item ${key}`);
+  // };
 
-  const items = [
-    {
-      label: (
-        <h5 className="btn1" onClick={() => filterProduct("")}>
-          All Products
-        </h5>
-      ),
-      key: "All Products",
-    },
-    {
-      label: (
-        <h5 className="btn1" onClick={() => filterProduct("men's clothing")}>
-          Men's Clothing
-        </h5>
-      ),
-      key: "Mens Clothing",
-    },
-    {
-      label: (
-        <h5 className="btn1" onClick={() => filterProduct("women's clothing")}>
-          Women's Clothing
-        </h5>
-      ),
-      key: "Womens Clothing",
-    },
-    {
-      label: (
-        <h5 className="btn1" onClick={() => filterProduct("jewelery")}>
-          Jewelry
-        </h5>
-      ),
-      key: "Jewelry",
-    },
-    {
-      label: (
-        <h5 className="btn1" onClick={() => filterProduct("electronics")}>
-          Electronic
-        </h5>
-      ),
-      key: "Electronic",
-    },
-  ];
+  // const items = [
+  //   {
+  //     label: (
+  //       <h5 className="btn1" onClick={() => filterProduct("")}>
+  //         All Products
+  //       </h5>
+  //     ),
+  //     key: "All Products",
+  //   },
+  //   {
+  //     label: (
+  //       <h5 className="btn1" onClick={() => filterProduct("men's clothing")}>
+  //         Men's Clothing
+  //       </h5>
+  //     ),
+  //     key: "Mens Clothing",
+  //   },
+  //   {
+  //     label: (
+  //       <h5 className="btn1" onClick={() => filterProduct("women's clothing")}>
+  //         Women's Clothing
+  //       </h5>
+  //     ),
+  //     key: "Womens Clothing",
+  //   },
+  //   {
+  //     label: (
+  //       <h5 className="btn1" onClick={() => filterProduct("jewelery")}>
+  //         Jewelry
+  //       </h5>
+  //     ),
+  //     key: "Jewelry",
+  //   },
+  //   {
+  //     label: (
+  //       <h5 className="btn1" onClick={() => filterProduct("electronics")}>
+  //         Electronic
+  //       </h5>
+  //     ),
+  //     key: "Electronic",
+  //   },
+  // ];
 
   // const App = () => (
   //   <Dropdown menu={{ items, onClick }}>
