@@ -64,7 +64,7 @@ useEffect(() => {
     };
   
     getProduct();
-  }, [id]);
+  }, [id  ]);
   
   const addProduct = product => {
     console.log('Adding Product to Cart:', product);

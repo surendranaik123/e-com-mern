@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
-import { Form, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import {NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, message, Space } from 'antd';
 import { Input } from 'antd';
-import Navbar  from '../components/Navbar';
+// import Navbar  from '../components/Navbar';
 import Footer from '../components/Footer';
 import { shuffle } from 'lodash';
 import img from '../assets/women_cloth.webp'
@@ -54,11 +54,11 @@ const Home = () => {
 
   const App = () => (
     <Dropdown menu={{ items, onClick }}>
-      <a onClick={(e) => e.preventDefault()}>
+      <button onClick={(e) => e.preventDefault()}>
         <Space>
           <button className='btn1'>Click menu item<DownOutlined /></button>
         </Space>
-      </a>
+      </button>
     </Dropdown>
   );
 

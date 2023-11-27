@@ -55,14 +55,12 @@ const Order = () => {
       totalPrice: newTotalPrice,
     });
 
-    // Update placeDetails as well
     setPlaceDetails({
       ...placeDetails,
       productqty: newQuantity,
       totalPrice: newTotalPrice,
     });
   };
-
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -70,7 +68,7 @@ const Order = () => {
           `https://fakestoreapi.com/products/${id}`
         );
         setProduct(response.data);
-
+  
         // Initialize placeDetails after fetching product data
         const placeDetails = {
           username: user ? user.fname : "Guest",
@@ -78,26 +76,28 @@ const Order = () => {
           addres: "",
           phoneno: "",
           productid: id,
-          producttitle: response.data.title, // Use the title from the fetched product
+          producttitle: response.data.title,
           productqty: orderDetails.quantity,
           totalPrice: (response.data.price * orderDetails.quantity).toFixed(2),
           date: formattedDate,
-          image:response.data.image,
+          image: response.data.image,
         };
-
-        setPlaceDetails(placeDetails); // Assuming you have setPlaceDetails defined elsewhere
-        setOrderDetails({
-          ...orderDetails,
+  
+        setPlaceDetails(placeDetails);
+        setOrderDetails((prevOrderDetails) => ({
+          ...prevOrderDetails,
           totalPrice: response.data.price,
-        });
+        }));
         setLoading(false);
       } catch (error) {
         console.error(error);
       }
     };
+  
     fetchProduct();
-  }, [id]);
-
+  }, [id, user, orderDetails.quantity, formattedDate, setPlaceDetails, setOrderDetails]);
+  
+  
   useEffect(() => {
     if (product.price !== undefined) {
       const newTotalPrice = orderDetails.quantity * product.price;

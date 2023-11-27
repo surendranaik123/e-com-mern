@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../css/order.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Navbar  from '../components/Navbar';
+import { useLocation} from 'react-router-dom';
+// import Navbar  from '../components/Navbar';
 import { useSelector } from 'react-redux';
 
 export const OrderDe = () => {
-  const navigate=useNavigate()
+  // const navigate=useNavigate()
   const [data, setData] = useState([]);
-  const [searchedName, setSearchedName] = useState('');
+  // const [searchedName, setSearchedName] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -16,7 +16,7 @@ export const OrderDe = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const userNameFromQuery = queryParams.get('username');
-
+console.log(data,setSuccess);
   useEffect(() => {
     const fetchData = async () => {
       try {

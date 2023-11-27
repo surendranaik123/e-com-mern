@@ -1,17 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../css/order.css';
-import { useNavigate } from 'react-router-dom';
-import  Navbar from '../components/Navbar';
-import img from '../assets/Home.jpg'
+// import { useNavigate } from 'react-router-dom';
+// import  Navbar from '../components/Navbar';
+// import img from '../assets/Home.jpg'
 export const OrderDetails = () => {
-  const navigate=useNavigate()
+  // const navigate=useNavigate()
   const [data, setData] = useState([]);
-  const [searchedName, setSearchedName] = useState('');
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchedName, setSearchedName] = useState('');
+  // const [searchResult, setSearchResult] = useState([]);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
+  // const [success, setSuccess] = useState('');
+console.log(error);
   useEffect(() => {
     const fetchData = async () => {
       try {
