@@ -1,0 +1,22 @@
+.sidenav {
+    
+    height: 40px;
+    width: 220px;
+    text-decoration: none; /* This property is not applicable to non-link elements */
+    border-radius: 5px;
+    padding-left: 18px;
+    padding-top: 3px;
+    color: blue;
+    align-items: center;
+}
+
+.sidenav:hover {
+    background-color: lightgray; /* Hover background color */
+    color: #000; /* Change text color on hover */
+}
+
+.sidenav.active {
+  /* Your active styles here */
+  background-color: blue;
+  color: #fff;
+}

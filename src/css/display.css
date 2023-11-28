@@ -1,0 +1,158 @@
+.dis {
+    display: flex;
+}
+
+.hero {
+    margin-top: 70px;
+    height: 400px;
+    width: 650px;
+    padding: 10px;
+    margin-left: 80px;
+    margin-right: 100px;
+    
+}
+
+.home_img {
+
+    padding: 45px;
+    height: 570px;
+    width: 550px;
+}
+
+
+.men {
+    margin: 50px;
+    padding: 70px;
+    padding-top: 80px;
+    height: 200px;
+    width: 240px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-image: url("../assets/mensclothes.jpg");
+    background-size: 125%;
+    background-repeat: no-repeat;
+   
+   
+
+}
+
+.home_btn{
+    margin-left: -10px;
+    padding: 6px;
+   height: 38px;
+   width:115px;
+    border-radius: 5px;
+    background-color:bisque;
+}
+.home_btn:hover{
+    background-color: blue;
+    color: white;
+    border: 2px solid white;
+}
+
+.content {
+    position: relative;
+    height: 120px;
+    width: 90%;
+    margin: 30px;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+    z-index: -1; /* Position the overlay behind the content */
+  }
+  
+  .opacity-image{
+    background-image: url('../assets/productbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+
+
+  .prodduct_img{
+    height: 350px;
+    width: 270px;
+    border-radius: 0px;
+   border: 5px solid white;
+   margin-bottom: 20px;
+ 
+  
+}
+
+
+  .home1{
+    display:flex;
+    justify-content: center;
+    margin-top: 50px;
+   
+    
+   }
+
+   /* .product{  
+    justify-content: center;
+    height: 370px;
+    width:260px;
+    padding: 10px;
+    padding-left: 30px;
+    margin: 10px;
+    margin-top: -50px;
+    border: 4px solid rgb(13, 121, 9);
+    border-radius: 6px;
+} */
+  
+.display{
+    display:flow-root;
+    justify-content: space-between;
+  }
+
+  .back1 {
+ 
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    justify-content: space-around;
+    position: relative;
+    overflow: hidden; 
+    /* background-color: rgb(195, 206, 202); */
+  }
+  
+  .back1::before {
+    content: "";
+  
+    background-color: lightgrey;
+    /* background-image: url("C:\Users\Gokul\Desktop\MERN\CRUD\client\src\assets\productbackground.jpg");  */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3; /* Adjust the opacity to control the darkness/lightness of the overlay */
+    z-index: -1; /* Place the overlay behind the content */
+  }  
+
+  .home_back {
+    background-image: url("../assets/Home_back.jpg");
+    position: relative;
+    display: flex;
+    width:100%;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px;
+} 
